@@ -1,0 +1,23 @@
+// app.js
+const express = require("express");
+const app = express();
+const port = 3000;
+
+// Home route
+app.get("/", (req, res) => {
+  res.send("<h1>Welcome to Home Page</h1>");
+});
+
+// About route
+app.get("/about", (req, res) => {
+  res.send("<h1>About Page</h1>");
+});
+
+// Contact route
+app.get("/contact", (req, res) => {
+  res.send("<h1>Contact Page</h1>");
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
