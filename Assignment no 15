@@ -1,0 +1,26 @@
+const express = require("express");
+const app = express();
+const port = 3000;
+
+// Set EJS as template engine
+app.set("view engine", "ejs");
+
+// Home route
+app.get("/", (req, res) => {
+  const user = { name: "Sanika", age: 20 };
+  res.render("index", { user: user });
+});
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Express Template Example</title>
+</head>
+<body>
+  <h1>Welcome, <%= user.name %>!</h1>
+  <p>Your age is <%= user.age %>.</p>
+</body>
+</html>
